@@ -1,0 +1,54 @@
+<div class="container">
+    <nav class="navbar navbar-expand-sm bg-light navbark-dark">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <button type="button" class="m-1 btn btn-primary" 
+                    Buttom label="addScreeen"
+                    routerLink="add">
+                  Add Data
+                </button>
+            </li>
+            <li class="nav-item">
+                <button type="button" class="m-1 btn btn-primary" 
+                    Buttom label="DataScreen"
+                    routerLink="list">
+                    Show Data
+                </button>
+            </li>
+            <li class="nav-item">
+                <button type="button" class="m-1 btn btn-primary" 
+                    Buttom label="vaultScreen"
+                    routerLink="vault">
+                    Vault Data
+                </button>
+            </li>
+            <li class="nav-item">
+                <button type="button" class="m-1 btn btn-primary" 
+                    Buttom label="vaultOperationScreen"
+                    routerLink="vaultoperation">
+                    Vault Operation
+                </button>
+            </li>
+            <li class="nav-item">
+                <button type="button" class="m-1 btn btn-primary" 
+                    Buttom label="DeleteScreen"
+                    routerLink="vault">
+                    Delete Data
+                </button>
+            </li>
+        </ul>
+
+    </nav>
+
+    <!-- <app-add-data *ngIf="addScreeen"></app-add-data>
+    <app-vault-data *ngIf="vaultScreen"></app-vault-data>
+    <app-list-data-from-db *ngIf="listScreen"></app-list-data-from-db> -->
+
+
+
+    <router-outlet></router-outlet>
+    <!-- <h1>{{title}}</h1> -->
+    
+    <!--<app-add-data></app-add-data>-->
+    <!-- <app-vault-data></app-vault-data> -->
+</div>

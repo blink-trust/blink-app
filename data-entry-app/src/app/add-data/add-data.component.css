@@ -1,0 +1,12 @@
+input:invalid {
+    border: 3px solid red;
+}
+
+.mg {
+    margin-top: 59px;
+}
+
+p {
+    margin-top: 40px !important;
+    text-align: center;    
+}

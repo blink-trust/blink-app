@@ -1,0 +1,89 @@
+<div class="container">
+    <div class="panel-heading">
+        <p>{{header}}!</p>
+    </div>
+
+    <div class="panel-body">
+        <div class="row">
+
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label for="organization">Organization</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="organization" name="organization" [(ngModel)]="vaultModel.organization">
+                    </div>                
+                </div>
+            </div>
+
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label for="customerId">Customer Id</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="customerId" name="customerId" [(ngModel)]="vaultModel.customerId">
+                    </div>                
+                </div>
+            </div>
+                
+                
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label for="table">Table name</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="table" name="table" [(ngModel)]="vaultModel.table">
+                    </div>                
+                </div>
+            </div>
+
+
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label for="row_id">Row id</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="row_id" name="row_id">
+                    </div>                
+                </div>
+            </div>
+
+            <div class="col-md-2">
+                <div class="form-group">
+                    <button type="button" (click)="getDetokanisedData(vaultModel)" class="btn btn-primary">Submit</button>              
+                </div>
+            </div>
+        </div>        
+        
+        <div class="row" *ngIf="!dataSource">
+            <div class="col-md-6">
+            <h3 class="my-1" translate>Table</h3>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="table-responsive">
+                <table class="table">
+                    <thead class="thead-dark">
+                        <tr>
+                        <th *ngFor="let value of dataSource[0] | keyvalue">{{value.key}}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let row of dataSource">
+                            <td *ngFor="let key of row | keyvalue">
+                                {{key.value}}
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+        
+        
+
+    
+
+
+    
+  

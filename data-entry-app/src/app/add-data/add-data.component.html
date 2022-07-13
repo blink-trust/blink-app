@@ -1,0 +1,113 @@
+<div class="panel-heading">
+  <h3><p><b>{{header}}</b></p></h3>
+</div>
+<div class="panel-body" style="margin-top: 59px;">
+
+  <form autocomplete="off" #formSave="ngForm" (ngSubmit)="submit(formSave.value)">
+
+    <div class="form-row">
+      <div class="form-group col-md-2">
+        <label for="id">Id</label>
+        <input type="number" class="form-control" id="id" name="id" [(ngModel)]="dataModel.id">
+      </div>
+    </div>
+    
+
+    <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="fname">First Name</label>
+          <input type="text" class="form-control" id="fname" placeholder="First name" name="fname" [(ngModel)]="dataModel.fname">
+        </div>
+        <div class="form-group col-md-6">
+          <label for="lname">Last Name</label>
+          <input type="text" class="form-control" id="lname" placeholder="Last name" name="lname" [(ngModel)]="dataModel.lname">
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="gender">Gender</label>
+          <select class="form-control" id="gender" name="gender" [(ngModel)]="dataModel.gender">
+            <option value="none" selected disabled hidden>Gender</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>            
+          </select>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="dob">Date of birth</label>
+          <input type="date" class="form-control" id="dob" name="dob" [(ngModel)]="dataModel.dob">
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="email">Email</label>
+          <input type="email" class="form-control" id="email" placeholder="Email id" name="email" [(ngModel)]="dataModel.email">
+        </div>
+        <div class="form-group col-md-6">
+          <label for="phone">Phone No</label>
+          <input type="text" class="form-control" id="phone" placeholder="Phone No" name="phone" [(ngModel)]="dataModel.phone">
+        </div>
+      </div>
+
+    <div class="form-group">
+      <label for="inputAddress">Address</label>
+      <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" name="address" [(ngModel)]="dataModel.address">
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="inputCity">City</label>
+        <input type="text" class="form-control" id="inputCity" name="city" [(ngModel)]="dataModel.city">
+      </div>
+      <div class="form-group col-md-4">
+        <label for="inputState">State</label>
+        <input type="text" class="form-control" id="inputState" name="state" [(ngModel)]="dataModel.state">
+      </div>
+      <div class="form-group col-md-2">
+        <label for="inputZip">Zip</label>
+        <input type="text" class="form-control" id="inputZip" name="postalCode" [(ngModel)]="dataModel.postalCode">
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group col-md-3">
+        <label for="driving">Driving Licence</label>
+        <input type="text" class="form-control" id="driving" name="drivinglic_no" placeholder="Driving Licence" [(ngModel)]="dataModel.drivinglic_no">
+      </div>
+      <div class="form-group col-md-3">
+        <label for="passport">Passport No</label>
+        <input type="text" class="form-control" id="passport" name="passport_number" placeholder="Passport No" [(ngModel)]="dataModel.passport_number">
+      </div>
+      <div class="form-group col-md-3">
+        <label for="account">Bank Account No</label>
+        <input type="text" class="form-control" id="account" name="bank_ac_number" placeholder="Bank Account No" [(ngModel)]="dataModel.bank_ac_number">
+      </div>
+      <div class="form-group col-md-3">
+        <label for="SSNo">SS No</label>
+        <input type="text" class="form-control" id="SSNo" name="ss_no" placeholder="Social Security No" [(ngModel)]="dataModel.ss_no">
+      </div>
+    </div>
+
+
+    <div class="form-row">
+      <div class="form-group col-md-3">
+        <label for="ccNo">Credit Card Number</label>
+        <input type="text" class="form-control" id="ccNo" name="creditcard_no" pattern="[0-9]+" placeholder="Credit Card Number" [(ngModel)]="dataModel.creditcard_no">
+      </div>
+      <div class="form-group col-md-3">
+        <label for="ccexpiry">Expiry details</label>
+        <input type="text" class="form-control" id="ccexpiry" name="expiry_date" placeholder="mm/yy" [(ngModel)]="dataModel.expiry_date">
+      </div>
+      <div class="form-group col-md-3">
+        <label for="cccvv">CVV no</label>
+        <input type="text" class="form-control" id="cccvv" name="cvv_no" placeholder="cvv no" [(ngModel)]="dataModel.cvv_no">
+      </div>
+    </div>
+
+    
+    <button type="submit" (click)="submit(dataModel)" class="btn btn-primary">Submit</button>
+    <span class="error" *ngIf="hasError">{{saveError}}</span>
+  </form>
+
+</div>
+
